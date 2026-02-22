@@ -1,11 +1,11 @@
 FROM python:3.14
 
-WORKDIR /code
+WORKDIR /api_health
 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./requirements.txt /api_health/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /api_health/requirements.txt
 
-COPY ./app /code/app
+COPY . /api_health
 
-CMD ["fastapi", "run", "app/main.py", "--port", "8000"]
+CMD ["fastapi", "run", "app.py", "--port", "8000"]

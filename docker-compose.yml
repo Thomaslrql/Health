@@ -1,0 +1,10 @@
+services:
+
+  api: 
+    container_name: api_health
+    build: . 
+    ports: 
+      - "8000:8000"
+    volumes:
+      - .:/api_health
+
